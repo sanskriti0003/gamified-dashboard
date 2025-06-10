@@ -1,0 +1,24 @@
+// src/components/Dashboard.js
+import React from "react";
+
+const Dashboard = ({ xp, level, streak, xpProgress, xpForNextLevel, handleAction }) => (
+  <div className="dashboard-card">
+    <h2>🎮 Your Progress</h2>
+    <p><b>XP:</b> {xp}</p>
+    <p><b>Level:</b> {level}</p>
+    <p><b>Streak:</b> {streak} days</p>
+    <div className="progress-container">
+      <div className="progress-bar">
+        <div className="progress-fill" style={{ width: `${xpProgress}%` }} />
+      </div>
+      <div className="progress-text">
+        {xp % xpForNextLevel} / {xpForNextLevel} XP to next level
+      </div>
+    </div>
+    <button onClick={handleAction} className="action-btn">
+      +10 XP (Demo Action)
+    </button>
+  </div>
+);
+
+export default Dashboard;
